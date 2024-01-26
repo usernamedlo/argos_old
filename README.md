@@ -36,13 +36,14 @@ Argos is a blockchain-based supply chain traceability application. It aims to pr
 
 ## Technology Stack
 
-- **Frontend:** React (Next.js), Redux, Tailwind CSS
+- **Frontend:** React (Next.js), Redux, Tailwind CSS, RainbowKit, Shadcnui, Lucide-React
 - **Backend:** Node.js, Solidity, Foundry
 
 ## Packages Used
 
 - [Shadcnui](https://ui.shadcn.com)
 - [Lucide-React](https://lucide.dev)
+- [RainbowKit](https://www.rainbowkit.com/fr)
 
 ## Screenshots
 
