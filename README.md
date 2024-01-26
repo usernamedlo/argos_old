@@ -58,7 +58,7 @@ Argos is a blockchain-based supply chain traceability application. It aims to pr
 1. Clone the Argos repository from GitHub.
 
    ```bash
-   git clone https://github.com/your-user/Argos.git
+   git clone https://github.com/usernamedlo/argos.git
    ```
 
 2. Navigate to the project directory.
