@@ -30,7 +30,7 @@ const Header = () => {
   return (
     <Sheet>
       <SheetTrigger><Hamburger toggled={isOpen} toggle={setOpen} /></SheetTrigger>
-      <SheetContent side={"top"} className="flex flex-col justify-center items-center" >
+      <SheetContent side={"top"} className="flex flex-col justify-center items-center mt-20" >
         <SheetHeader>
           <SheetDescription>
             <nav className="flex flex-col gap-4">
