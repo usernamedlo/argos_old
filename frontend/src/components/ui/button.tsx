@@ -11,6 +11,7 @@ const buttonVariants = cva(
       variant: {
         navButton: "transition ease-in duration-200 bg-transparent text-[#CBD3DD] rounded-[6px] border-[#CBD3DD] border px-5 py-3 hover:bg-[#319DFF] hover:border-[#319DFF] hover-text-white hover:border-transparent hover:shadow-[#319DFF] hover:shadow",
         ghost: "hover:bg-accent hover:text-accent-foreground",
+        navLink: "text-[#CBD3DD] px-5 py-3 border border-transparent bg-transparent hover:text-white",
       },
       size: {
         default: "h-10 px-4 py-2",

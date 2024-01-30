@@ -57,3 +57,31 @@
     @apply bg-background text-foreground;
   }
 }
+
+.glow {
+  position: relative;
+}
+
+.glow:hover {
+  text-shadow: #fff 0 0 15px;
+  transition-property: text-shadow; /* Modifier selon les propriétés qui changent */
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms; /* Durée unifiée */
+  will-change: text-shadow; /* Optimise les performances pour l'animation de text-shadow */
+}
+
+.glow::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 7px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+}
+
+.glow:hover::after {
+  width: 25%;
+}

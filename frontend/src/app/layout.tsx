@@ -1,11 +1,11 @@
 "use client";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
 import {
   getDefaultWallets,
   RainbowKitProvider,
+  midnightTheme,
 } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
@@ -13,6 +13,8 @@ import { hardhat } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import ClientOnly from "@/components/features/layout/ClientOnly";
+import NavBar from "@/components/navbar/NavBar";
 
 const { chains, publicClient } = configureChains(
   [hardhat],
@@ -43,13 +45,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <WagmiConfig config={wagmiConfig}>
-          <RainbowKitProvider chains={chains}>
-            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-              {children}
-            </ThemeProvider>
-          </RainbowKitProvider>
-        </WagmiConfig>
+        <ClientOnly>
+          <WagmiConfig config={wagmiConfig}>
+            <RainbowKitProvider chains={chains} theme={midnightTheme()} modalSize="compact">
+              <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                <NavBar />
+                {children}
+              </ThemeProvider>
+            </RainbowKitProvider>
+          </WagmiConfig>
+        </ClientOnly>
       </body>
     </html>
   );
