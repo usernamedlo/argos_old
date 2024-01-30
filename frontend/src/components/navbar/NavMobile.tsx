@@ -5,6 +5,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Squash as Hamburger } from "hamburger-react";
 import { routes } from "@/lib/routes"
 
+import WalletConnect from './WalletConnect';
+
 export const NavMobile = () => {
   const [isOpen, setOpen] = useState(false);
   const ref = useRef(null);
@@ -12,7 +14,8 @@ export const NavMobile = () => {
   useClickAway(ref, () => setOpen(false));
 
   return (
-    <div ref={ref} className="lg:hidden ">
+    <div ref={ref} className="lg:hidden flex">
+      <WalletConnect />
       <Hamburger toggled={isOpen} size={20} toggle={setOpen} />
       <AnimatePresence>
         {isOpen && (
@@ -31,12 +34,7 @@ export const NavMobile = () => {
                   <motion.li
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 260,
-                      damping: 20,
-                      delay: 0.1 + idx / 10,
-                    }}
+
                     key={route.label}
                     className="w-full p-[0.08rem] rounded-xl bg-gradient-to-tr from-neutral-800 via-neutral-950 to-neutral-700"
                   >
@@ -57,6 +55,7 @@ export const NavMobile = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
     </div>
   );
 };

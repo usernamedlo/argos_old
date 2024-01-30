@@ -10,11 +10,10 @@ export const NavBar = () => {
 
   return (
     <div className="fixed top-0 left-0 right-0 bg-[#07090B]/60">
-      <nav className="flex items-center justify-between py-1 lg:py-4 lg:px-[4.5rem]">
+      <nav className="flex items-center justify-between px-6 py-4 lg:px-[4.5rem]">
         <Logo />
-        <NavMobile />
         <NavDesktop />
-        <WalletConnect />
+        <NavMobile />
       </nav>
     </div>
   );

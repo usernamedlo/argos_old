@@ -5,10 +5,8 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 const WalletConnect = () => {
 
-
-
   return (
-    <div className='hidden lg:block'>
+    <div className=''>
       <ConnectButton
         label='Sign in'
         accountStatus={{
